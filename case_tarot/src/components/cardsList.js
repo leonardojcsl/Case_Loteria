@@ -1,6 +1,6 @@
 import { BASE_URL } from "../constants";
 
-export const cardsList = [
+const cardsList = [
     {
         name: 'O MAGO',
         image: `${BASE_URL}/arcano1.jpg`,
@@ -392,3 +392,5 @@ export const cardsList = [
         meaning:'Em seu Sentido Elementar, o Rei de Moedas representa o domínio das construções na matéria, através da ciência e do conhecimento. '
     },
 ];
+
+export default cardsList
