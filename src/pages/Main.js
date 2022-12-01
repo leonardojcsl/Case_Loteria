@@ -1,24 +1,40 @@
-import { Card } from "@mui/material";
-import { useState } from "react";
-import cardsList from "../components/cardsList";
-import BasicGrid from "../components/Grid";
-import { CardBox, Item } from "./styled";
+import { useState, useEffect } from "react";
+import { CardBox, Grid } from "./styled"
+import cardsList from "../components/cardsList"
+import BackCard from "../assets/YuGiOh.jpg"
 
 const Main = () => {
-  const [cards, setCards] = useState(cardsList);
+  const [cards, setCards] = useState();
 
-  const cardsInfos = cards?.map((e) => {
+  const initialCards = cardsList?.map((e) => {
     return (
       <CardBox>
-        <p>{e.name}</p>
+        <h5>{e.name}</h5>
         <img src={e.image} />
-        <p>{e.meaning}</p>
       </CardBox>
     )
   })
+
+  const startGame = () => {
+    return( 
+      setCards(
+        <CardBox>
+        <img src={BackCard} />
+        </CardBox>
+      )
+    )
+  }
+
+  useEffect(() => {
+    startGame()
+  }, [])
+
   return (
     <div>
-      <BasicGrid/>
+      <button onClick={startGame}>Começar Jogo</button>
+      <Grid>
+        {initialCards}
+      </Grid>
     </div>
   )
 

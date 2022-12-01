@@ -4,24 +4,27 @@ export const CardBox = styled.div`
     border: solid 1px red;
     display: flex;
     flex-direction: column;
-    max-height: 18em;
-    max-width: 18em; 
+    max-height: 15em;
+    max-width: 8em; 
     align-items: center;
     text-align: center;
 
     img {
-        max-height: 18em;
-        max-width: 18em;
+        max-height: 10em;
+        max-width: 15em;
     };
 
     p {
-        font-size: medium
+        font-size: smaller;
     }
 `
 
 export const Grid = styled.div`
     display: grid;
-    grid-template-columns: repeat(5, 500em);
-    grid-template-rows: 20em 20em;
-    grid-gap: 5px;
+    border: solid red 2px;
+    justify-content: center;
+    align-items: baseline;
+    grid-template-columns: repeat(6, 12.5em);
+    grid-template-rows: 15em;
+    grid-gap: 1.5em;
 `
