@@ -4,7 +4,12 @@ import cardsList from "../components/cardsList"
 import BackCard from "../assets/YuGiOh.jpg"
 
 const Main = () => {
-  const [cards, setCards] = useState();
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const newList = [... cardsList]
+    setCards(newList)
+  }, [])
 
   const initialCards = cardsList?.map((e) => {
     return (
@@ -24,10 +29,6 @@ const Main = () => {
       )
     )
   }
-
-  useEffect(() => {
-    startGame()
-  }, [])
 
   return (
     <div>
